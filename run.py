@@ -174,22 +174,16 @@ def hangman(word):
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
                 print('You alreay guessed this letter!\n')
-                print('\n')
-                print('Guessed letters: ')
-                print(*guessed_letters, sep=", ")
+                print('\nGuessed letters: ', *guessed_letters, sep=' ')
             elif guess not in word:
                 print(f'{guess} is not in word')
                 attempts -= 1
                 guessed_letters.append(guess)
-                print('\n')
-                print('Guessed letters: ')
-                print(*guessed_letters, sep=", ")
+                print('\nGuessed letters: ', *guessed_letters, sep=' ')
             else:
                 print(f'Nice, {guess} is the word!\n')
                 guessed_letters.append(guess)
-                print('\n')
-                print('Guessed letters: ')
-                print(*guessed_letters, sep=", ")
+                print('\nGuessed letters: ', *guessed_letters, sep=' ')
                 word_as_list = list(full_word)
                 indicies = [
                     i for i, letter in enumerate(word) if letter == guess]
@@ -204,23 +198,17 @@ def hangman(word):
             elif guess != word:
                 attempts -= 1
                 guessed_words.append(guess)
-                print('\n')
-                print('Guessed letters: ')
-                print(*guessed_letters, sep=", ")
-                print('Guessed words: ')
-                print(*guessed_words, sep=", ")
-                print('\n')
+                print('\nGuessed letters: ', *guessed_letters, sep=' ')
+                print('Guessed words: ', *guessed_words, sep=' ')
                 print(f'Sorry, {guess} is not the word')
             else:
                 guessed = True
                 full_word = word
         else:
             print('Not a valid guess. Please try again.')
-        os.system('cls' if os.name == 'nt' else 'clear')
         print('\n')
-        print(f'{attempts} tries left.')
+        print(f'{attempts} tries left.\n')
         print(full_word)
-        print('\n')
     if guessed:
         print(ASCII_ART_WIN)
         print(f'{word} is correct, you win!')

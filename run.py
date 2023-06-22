@@ -170,17 +170,19 @@ def hangman(word):
     print(full_word)
     print('\n')
     while not guessed and attempts > 0:
-        guess = input('Please enter a letter or word: \n').upper()
+        guess = input('\nPlease enter a letter or word: \n').upper()
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
                 print('You alreay guessed this letter!\n')
                 print('\nGuessed letters: ', *guessed_letters, sep=' ')
             elif guess not in word:
-                print(f'{guess} is not in word')
+                os.system('cls' if os.name == 'nt' else 'clear')
+                print(f'{guess} is not in the word')
                 attempts -= 1
                 guessed_letters.append(guess)
                 print('\nGuessed letters: ', *guessed_letters, sep=' ')
             else:
+                os.system('cls' if os.name == 'nt' else 'clear')
                 print(f'Nice, {guess} is the word!\n')
                 guessed_letters.append(guess)
                 print('\nGuessed letters: ', *guessed_letters, sep=' ')
@@ -198,9 +200,11 @@ def hangman(word):
             elif guess != word:
                 attempts -= 1
                 guessed_words.append(guess)
+                os.system('cls' if os.name == 'nt' else 'clear')
+                print(f'Sorry, {guess} is not the word\n')
                 print('\nGuessed letters: ', *guessed_letters, sep=' ')
                 print('Guessed words: ', *guessed_words, sep=' ')
-                print(f'Sorry, {guess} is not the word')
+                
             else:
                 guessed = True
                 full_word = word
@@ -225,6 +229,7 @@ def main():
     word = get_word()
     hangman(word)
     while input('Play again? (Y/N) ').upper() == 'Y':
+        os.system('cls' if os.name == 'nt' else 'clear')
         word = get_word()
         hangman(word)
 

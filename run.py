@@ -1,4 +1,5 @@
 import random
+import os
 
 list_of_words = [
     'horse',
@@ -215,13 +216,14 @@ def hangman(word):
                 full_word = word
         else:
             print('Not a valid guess. Please try again.')
+        os.system('cls' if os.name == 'nt' else 'clear')
         print('\n')
         print(f'{attempts} tries left.')
         print(full_word)
         print('\n')
     if guessed:
         print(ASCII_ART_WIN)
-        print(f'{guess} is correct, you win!')
+        print(f'{word} is correct, you win!')
     else:
         print(ASCII_ART_LOST)
         print('Sorry, no more guesses left!\n')

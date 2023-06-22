@@ -59,3 +59,15 @@ HANGMAN_ART = '''
 |
 '-------
 '''
+
+
+def welcome_message():
+    '''
+    Prints welcome message and hangman art
+    '''
+
+    print('Welcome to HANGMAN!' + HANGMAN_ART)
+
+
+welcome_message()
+

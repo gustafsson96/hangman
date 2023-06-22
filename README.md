@@ -1,5 +1,28 @@
 # Hangman Game
 
+## Planning
+
+## Game Rules
+
+## Features
+
+## Data Model
+
+## Testing
+
+### Bugs
+#### Solved Bugs
+#### Remaining Bugs
+
+### Validator Testing
+
+## Deployment
+
+## Credits
+
+### Content
+
+
 ## Reminders
 
 - Your code must be placed in the `run.py` file

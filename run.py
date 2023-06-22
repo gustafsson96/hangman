@@ -176,7 +176,8 @@ def hangman(word):
         guess = input('\nPlease enter a letter or word: \n').upper()
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
-                print('You alreay guessed this letter!\n')
+                os.system('cls' if os.name == 'nt' else 'clear')
+                print(f'You alreay guessed "{guess}"! Please try again.\n')
                 print('\nGuessed letters: ', *guessed_letters, sep=' ')
             elif guess not in word:
                 os.system('cls' if os.name == 'nt' else 'clear')
@@ -199,7 +200,8 @@ def hangman(word):
                     guessed = True
         elif len(guess) == len(word) and guess.isalpha():
             if guess in guessed_words:
-                print(f'You already guessed {guess}, please try again')
+                os.system('cls' if os.name == 'nt' else 'clear')
+                print(f'You already guessed "{guess}"! Please try again.\n')
             elif guess != word:
                 attempts -= 1
                 guessed_words.append(guess)

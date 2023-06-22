@@ -23,8 +23,6 @@ After each guess, the letter will if correct replace a dash (or more if there ar
 
 After each turn, the previously guessed letter will be visible for the user in the form of a list. This makes it easy for the user to see what options they have left to guess. If the user still accidentally enters an already guessed letter, a message will tell the user what happened and ask for them to enter a different letter.
 
-## Data Model
-
 ## Testing
 
 The manual tests done to ensure the projects functionality are:

@@ -112,16 +112,17 @@ def hangman(word):
     print(full_word)
     print('\n')
     while not guessed and attempts > 0:
-        guess = input('Please guess a letter or word: ').upper()
+        guess = input('Please guess a letter or word: \n').upper()
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
-                print('you alreay guessed this letter!')
+                print('You alreay guessed this letter!')
             elif guess not in word:
-                print(guess, 'is not in word')
+                print(f'{guess} is not in word')
                 attempts -= 1
                 guessed_letters.append(guess)
+                print(guessed_letters)
             else:
-                print('good job', guess, 'is the word')
+                print(f'Nice, {guess} is the word!')
                 guessed_letters.append(guess)
                 print(guessed_letters)
                 word_as_list = list(full_word)
@@ -134,12 +135,12 @@ def hangman(word):
                     guessed = True
         elif len(guess) == len(word) and guess.isalpha():
             if guess in guessed_words:
-                print('you already guessed this word', guess)
+                print(f'You already guessed {guess}, please try again')
             elif guess != word:
-                print(guess, 'is not the word')
+                print(f'Sorry, {guess} is not the word')
                 attempts -= 1
                 guessed_words.append(guess)
-                print(guessed_letters)
+                print(guessed_words)
             else:
                 guessed = True
                 full_word = word

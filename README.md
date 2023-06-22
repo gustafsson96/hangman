@@ -19,6 +19,18 @@ By guessing letters, one by one, the user has 6 attempts to get the word right.
 
 ## Features
 
+![Screenshot of "welcome to game"](/documentation/welcome_screenshot1.png)
+
+![Screenshot of correctly guessed letter](/documentation/correct_letter_screenshot2%20.png) not working
+
+![Screenshot of incorrectly guess letter](/documentation/wrong_letter_screenshot3%20.png) not working
+
+![Screenshot of game lost](/documentation/lose_screenshot4.png)
+
+![Screenshot of game won](/documentation/win_screenshot5%20.png) not working
+
+![Screenshot of incorrectly guessed word](/documentation/word_counter_screenshot6.png)
+
 After each guess, the letter will if correct replace a dash (or more if there are more than one of the letter in the word), and if incorrect, a message will be displayed telling the user that the guess was incorrect. 
 
 After each turn, the previously guessed letter will be visible for the user in the form of a list. This makes it easy for the user to see what options they have left to guess. If the user still accidentally enters an already guessed letter, a message will tell the user what happened and ask for them to enter a different letter.

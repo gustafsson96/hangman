@@ -74,7 +74,8 @@ welcome_message()
 
 lenstring = False
 
-while not lenstring:  # Loop to ask for and validate user input
+# Asks for and validates user input
+while not lenstring:
     username = input('Please enter your name: \n').capitalize()
 
     if len(username) >= 3:
@@ -84,7 +85,7 @@ while not lenstring:  # Loop to ask for and validate user input
     else:
         print('Please enter a name that is at least three letters')
 
-print(f'\nOkay, {username}, let\'s start guessing!\n')
+print(f'\nOkay, {username}, let\'s start the game!\n')
 
 
 def get_word():
@@ -95,6 +96,8 @@ def get_word():
     return word.upper()  # Return the word uppercase 
 
 
+# Code inspired by https://www.youtube.com/watch?v=m4nEnsavl6w&t=7s.
+# The code has been modified to fit my project.
 def hangman(word):
     '''
     Main game function.
@@ -105,26 +108,33 @@ def hangman(word):
     '''
     full_word = '_' * len(word)
     guessed = False
-    guessed_letters = []
-    guessed_words = []
-    attempts = 7
-    print(f'{attempts} guesses left')
+    guessed_letters = []  # Empty list for guessed letters
+    guessed_words = []  # Empty list for guessed words
+    attempts = 7 # To track user attempts
+    print(f'You have {attempts} guesses.')
     print(full_word)
     print('\n')
     while not guessed and attempts > 0:
-        guess = input('Please guess a letter or word: \n').upper()
+        guess = input('Please enter a letter or word: \n').upper()
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
-                print('You alreay guessed this letter!')
+                print('You alreay guessed this letter!\n')
+                print('\n')
+                print('Guessed letters: ')
+                print(*guessed_letters, sep=", ")
             elif guess not in word:
                 print(f'{guess} is not in word')
                 attempts -= 1
                 guessed_letters.append(guess)
-                print(guessed_letters)
+                print('\n')
+                print('Guessed letters: ')
+                print(*guessed_letters, sep=", ")
             else:
-                print(f'Nice, {guess} is the word!')
+                print(f'Nice, {guess} is the word!\n')
                 guessed_letters.append(guess)
-                print(guessed_letters)
+                print('\n')
+                print('Guessed letters: ')
+                print(*guessed_letters, sep=", ")
                 word_as_list = list(full_word)
                 indicies = [
                     i for i, letter in enumerate(word) if letter == guess]
@@ -140,17 +150,22 @@ def hangman(word):
                 print(f'Sorry, {guess} is not the word')
                 attempts -= 1
                 guessed_words.append(guess)
-                print(guessed_words)
+                print('\n')
+                print('Guessed letters: ')
+                print(*guessed_letters, sep=", ")
+                print('Guessed words: ')
+                print(*guessed_words, sep=", ")
             else:
                 guessed = True
                 full_word = word
         else:
-            print('not a valid guess')
-        print(attempts)
+            print('Not a valid guess. Please try again.')
+        print('\n')
+        print(f'{attempts} tries left.')
         print(full_word)
         print('\n')
     if guessed:
-        print('you guessed the word, you win!')
+        print(f'{guess} is correct, you win!')
     else:
         print('Sorry, no more guesses left!\n')
         print(f'The word was {word}\n')

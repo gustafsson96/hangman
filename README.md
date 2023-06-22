@@ -34,7 +34,7 @@ After each turn, the previously guessed letter will be visible for the user in t
 ### Validator Testing
 
 * PEP8
-    * Test code using PEP8online.com
+    * Test
 
 ## Deployment
 
@@ -43,7 +43,7 @@ This project was deployed using Heroku.
 * Steps used for deployment:
      * On the Heroku dashboard, click "Create new app".
      * Enter app name and region. Click "Create app".
-     * Locate the "Settings" tab. Add Config Vars (key=PORT, value=8000). Add buildpacks Python and NodeJS (Python first, NodeJS second).
+     * Locate the "Settings" tab. Add Config Vars and add buildpacks Python and NodeJS (Python first, NodeJS second).
      * Locate the "Deploy" tab. Connect to GitHub and enter the repository name to link it to Heroku.
      * Make sure branch is set to "main".
      * Click on Deploy.
@@ -52,35 +52,6 @@ This project was deployed using Heroku.
 
 ## Credits
 
-[This YouTube video](https://www.youtube.com/watch?v=m4nEnsavl6w) by YouTube channel "Kite".
-
-ASCII art from: 
-
-Art by Horroroso
-
-## Reminders
-
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
-
-## Creating the Heroku app
-
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
----
-
-Happy coding!
+* [This YouTube video](https://www.youtube.com/watch?v=m4nEnsavl6w) by YouTube channel "Kite" was used as a guide to create the code for the functionality of the game. The code has been modified for my project.  
+* [This YouTube video](https://www.youtube.com/watch?v=cJJTnI22IF8&t=512s) by YouTube channel "Kylie Ying" as also used as inspiration.
+* ASCII art from [ASCII Art Archive](https://www.asciiart.eu/) (Art by "Horroroso")

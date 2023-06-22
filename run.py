@@ -232,6 +232,8 @@ def main():
         os.system('cls' if os.name == 'nt' else 'clear')
         word = get_word()
         hangman(word)
+    print('Thanks for playing!')
+
 
 
 if __name__ == '__main__':

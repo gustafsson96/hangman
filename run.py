@@ -85,3 +85,8 @@ while not lenstring:  # Loop to ask for and validate user input
         print('Please enter a name that is at least three letters')
 
 print(f'\nOkay, {username}, let\'s start guessing!\n')
+
+
+def get_word():
+    word = random.choice(list_of_words)  # pick random word from list
+    return word.upper()

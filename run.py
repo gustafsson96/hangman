@@ -71,3 +71,17 @@ def welcome_message():
 
 welcome_message()
 
+
+lenstring = False
+
+while not lenstring:  # Loop to ask for and validate user input
+    username = input('Please enter your name: \n').capitalize()
+
+    if len(username) >= 3:
+        lenstring = True
+    elif username.isdigit():
+        print('Please enter letters only')
+    else:
+        print('Please enter a name that is at least three letters')
+
+print(f'\nOkay, {username}, let\'s start guessing!\n')

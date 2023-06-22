@@ -92,7 +92,7 @@ def get_word():
     return word.upper()
 
 
- def play(word):
+def play(word):
     word_completion = '_' * len(word)
     guessed = False
     guessed_letters = []

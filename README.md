@@ -28,13 +28,18 @@ After each turn, the previously guessed letter will be visible for the user in t
 ## Testing
 
 ### Bugs
+
+
 #### Solved Bugs
+* When I first ran the code through the [CI Python Linter](https://pep8ci.herokuapp.com/), it returned several errors regarding "invalid escape sequence" and "trailing whitespace" between line 54 and 120 where the ASCII art is stored. I found the first error was because the ASCII art used single backslashes. I solved this by adding double backslashes instead. To fix the second error I made sure there were no trailing whitespace.
+
 #### Remaining Bugs
 
 ### Validator Testing
 
 * PEP8
-    * Test
+    * The final code was tested using the [CI Python Linter](https://pep8ci.herokuapp.com/). No errors were found.
+   
 
 ## Deployment
 

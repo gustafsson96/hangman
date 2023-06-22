@@ -1,5 +1,5 @@
-import random # To get a random word from list_of_words
-import os # To clean up terminal after guesses
+import random  # To get a random word from list_of_words
+import os  # To clean up terminal after guesses
 
 list_of_words = [
     'horse',
@@ -52,37 +52,40 @@ list_of_words = [
     'spring']
 
 HANGMAN_ART = '''
+
 *----
 |   |
 |   O
-|  /|\ 
-|  / \ 
+|  /|\\
+|  / \\
 |
 '-------
+
 '''
 
 ASCII_ART_WIN = '''
+
          _,----.
       ,-'     __`.
-     /    .  /--\`)
-    /  .  )\/_,--\ 
-   /  ,'\/,-'    _\_
-  |  /  ,' ,---'  __\ 
- ,' / ,:     _,-\'_,(
-  (/ /  \ \,'   |'  _)         ,. ,.,.
-   \/   |          '  \        \ ,. \ )
-    \, ,-              \       /,' )//
-     ; \'`      _____,-'      _|`  ,'
-      \ `"\    (_,'_)     _,-'    ,'
-       \   \       \  _,-'       ,'
+     /    .  /--\\`)
+    /  .  ) /_,--\\
+   /  ,'\\/,-'    _\\_
+  |  /  ,' ,---'  __\\
+ ,' / ,:     _,-\\'_,(
+  (/ /  \\ \\,'   |'  _)         ,. ,.,.
+   \\/   |          '  \\        \\ ,. \\ )
+    \\, ,-              \\       \\,' )//
+     ; \\'`      _____,-'      _|`  ,'
+      \\ `"\\    (_,'_)     _,-'    ,'
+       \\   \\       \\  _,-'       ,'
        |, , )       `'       _,-'
-       /`/ Y    ,    \   _,-'
-          :    /      \-'
-          |     `--.__\___
+       /`/ Y    ,    \\   _,-'
+          :    /      \\-'
+          |     `--.__\\___
           |._           __)
 -hrr-     |  `--.___    _)
           |         `----'
-         /                \ 
+         /                \\
         '                . )
 
 '''
@@ -90,29 +93,30 @@ ASCII_ART_WIN = '''
 ASCII_ART_LOST = '''
 
                    _ ,___,-'",-=-.
-       __,-- _ _,-'_)_  (""`'-._\ `.
+       __,-- _ _,-'_)_  (""`'-._\\ `.
     _,'  __ |,' ,-' __)  ,-     /. |
-  ,'_,--'   |     -'  _)/         `\ 
+  ,'_,--'   |     -'  _)/         `\\
 ,','      ,'       ,-'_,`           :
 ,'     ,-'       ,(,-(              :
      ,'       ,-' ,    _            ;
     /        ,-._/`---'            /
    /        (____)(----. )       ,'
-  /         (      `.__,     /\ /,
- :           ;-.___         /__\/|
- |         ,'      `--.      -,\ |
- :        /            \    .__/
-  \      (__            \    |_
-   \       ,`-, *       /   _|,\ 
-    \    ,'   `-.     ,'_,-'    \ 
-   (_\,-'    ,'\")--,'-'       __\ 
-    \       /  // ,'|      ,--'  `-.
-     `-.    `-/ \'  |   _,'         `.
-        `-._ /      `--'/             \ 
--hrr-      ,'           |              \ 
-          /             |               \ 
+  /         (      `.__,    /\\ /,
+ :           ;-.___        /__\\/|
+ |         ,'      `--.      -,\\ |
+ :        /            \\   .__/
+  \\      (__            \\  |
+   \\       ,`-, *       /  _|, \\
+    \\    ,'   `-.     ,'_,-'    \\
+   (_\\,-'    ,'\\")--,'-'       _\\
+    \\       /  // ,'|      ,--'  `-.
+     `-.    `-/ \\'  |   _,'         `.
+        `-._ /      `--'/             \\
+-hrr-      ,'           |              \\
+          /             |               \\
        ,-'              |               /
       /                 |             -'
+
 '''
 
 
@@ -148,7 +152,7 @@ def get_word():
     Gets and returns a random word from word list
     '''
     word = random.choice(list_of_words)  # pick random word from list
-    return word.upper()  # Return the word uppercase 
+    return word.upper()  # Return the word uppercase
 
 
 # Code inspired by https://www.youtube.com/watch?v=m4nEnsavl6w&t=7s.
@@ -165,7 +169,7 @@ def hangman(word):
     guessed = False
     guessed_letters = []  # Empty list for guessed letters
     guessed_words = []  # Empty list for guessed words
-    attempts = 7 # To track user attempts
+    attempts = 7  # To track user attempts
     print(f'You have {attempts} guesses.')
     print(full_word, '\n')
     while not guessed and attempts > 0:
@@ -203,7 +207,7 @@ def hangman(word):
                 print(f'Sorry, {guess} is not the word\n')
                 print('\nGuessed letters: ', *guessed_letters, sep=' ')
                 print('Guessed words: ', *guessed_words, sep=' ')
-                
+
             else:
                 guessed = True
                 full_word = word
@@ -219,7 +223,7 @@ def hangman(word):
         print(ASCII_ART_LOST)
         print('Sorry, no more guesses left!\n')
         print(f'The word was {word}\n')
-        
+
 
 def main():
     '''

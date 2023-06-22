@@ -1,5 +1,5 @@
-import random
-import os
+import random # To get a random word from list_of_words
+import os # To clean up terminal after guesses
 
 list_of_words = [
     'horse',
@@ -167,8 +167,7 @@ def hangman(word):
     guessed_words = []  # Empty list for guessed words
     attempts = 7 # To track user attempts
     print(f'You have {attempts} guesses.')
-    print(full_word)
-    print('\n')
+    print(full_word, '\n')
     while not guessed and attempts > 0:
         guess = input('\nPlease enter a letter or word: \n').upper()
         if len(guess) == 1 and guess.isalpha():
@@ -233,7 +232,6 @@ def main():
         word = get_word()
         hangman(word)
     print('Thanks for playing!')
-
 
 
 if __name__ == '__main__':

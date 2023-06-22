@@ -52,8 +52,11 @@ This project was deployed using Heroku.
 
 ## Credits
 
-(This YouTube video)[https://www.youtube.com/watch?v=m4nEnsavl6w] by YouTube channel "Kite".
+[This YouTube video](https://www.youtube.com/watch?v=m4nEnsavl6w) by YouTube channel "Kite".
 
+ASCII art from: 
+
+Art by Horroroso
 
 ## Reminders
 

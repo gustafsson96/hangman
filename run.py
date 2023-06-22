@@ -60,6 +60,60 @@ HANGMAN_ART = '''
 '-------
 '''
 
+ASCII_ART_WIN = '''
+         _,----.
+      ,-'     __`.
+     /    .  /--\`)
+    /  .  )\/_,--\ 
+   /  ,'\/,-'    _\_
+  |  /  ,' ,---'  __\ 
+ ,' / ,:     _,-\'_,(
+  (/ /  \ \,'   |'  _)         ,. ,.,.
+   \/   |          '  \        \ ,. \ )
+    \, ,-              \       /,' )//
+     ; \'`      _____,-'      _|`  ,'
+      \ `"\    (_,'_)     _,-'    ,'
+       \   \       \  _,-'       ,'
+       |, , )       `'       _,-'
+       /`/ Y    ,    \   _,-'
+          :    /      \-'
+          |     `--.__\___
+          |._           __)
+-hrr-     |  `--.___    _)
+          |         `----'
+         /                \ 
+        '                . )
+
+'''
+
+ASCII_ART_LOST = '''
+
+                   _ ,___,-'",-=-.
+       __,-- _ _,-'_)_  (""`'-._\ `.
+    _,'  __ |,' ,-' __)  ,-     /. |
+  ,'_,--'   |     -'  _)/         `\ 
+,','      ,'       ,-'_,`           :
+,'     ,-'       ,(,-(              :
+     ,'       ,-' ,    _            ;
+    /        ,-._/`---'            /
+   /        (____)(----. )       ,'
+  /         (      `.__,     /\ /,
+ :           ;-.___         /__\/|
+ |         ,'      `--.      -,\ |
+ :        /            \    .__/
+  \      (__            \    |_
+   \       ,`-, *       /   _|,\ 
+    \    ,'   `-.     ,'_,-'    \ 
+   (_\,-'    ,'\")--,'-'       __\ 
+    \       /  // ,'|      ,--'  `-.
+     `-.    `-/ \'  |   _,'         `.
+        `-._ /      `--'/             \ 
+-hrr-      ,'           |              \ 
+          /             |               \ 
+       ,-'              |               /
+      /                 |             -'
+'''
+
 
 def welcome_message():
     '''
@@ -147,7 +201,6 @@ def hangman(word):
             if guess in guessed_words:
                 print(f'You already guessed {guess}, please try again')
             elif guess != word:
-                print(f'Sorry, {guess} is not the word')
                 attempts -= 1
                 guessed_words.append(guess)
                 print('\n')
@@ -155,6 +208,8 @@ def hangman(word):
                 print(*guessed_letters, sep=", ")
                 print('Guessed words: ')
                 print(*guessed_words, sep=", ")
+                print('\n')
+                print(f'Sorry, {guess} is not the word')
             else:
                 guessed = True
                 full_word = word
@@ -165,11 +220,13 @@ def hangman(word):
         print(full_word)
         print('\n')
     if guessed:
+        print(ASCII_ART_WIN)
         print(f'{guess} is correct, you win!')
     else:
+        print(ASCII_ART_LOST)
         print('Sorry, no more guesses left!\n')
         print(f'The word was {word}\n')
-
+        
 
 def main():
     '''

@@ -21,13 +21,13 @@ By guessing letters, one by one, the user has 6 attempts to get the word right.
 
 ![Screenshot of "welcome to game"](/documentation/welcome_screenshot1.png)
 
-![Screenshot of correctly guessed letter](/documentation/correct_letter_screenshot2%20.png) not working
+![Screenshot of correctly guessed letter](/documentation/correct_letter_sh.png)
 
-![Screenshot of incorrectly guess letter](/documentation/wrong_letter_screenshot3%20.png) not working
+![Screenshot of incorrectly guess letter](/documentation/incorrect_letter_sh.png)
 
 ![Screenshot of game lost](/documentation/lose_screenshot4.png)
 
-![Screenshot of game won](/documentation/win_screenshot5%20.png) not working
+![Screenshot of game won](/documentation/win_screenshot.png)
 
 ![Screenshot of incorrectly guessed word](/documentation/word_counter_screenshot6.png)
 

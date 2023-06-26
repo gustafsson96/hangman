@@ -151,8 +151,8 @@ def get_word():
     '''
     Gets and returns a random word from word list
     '''
-    word = random.choice(list_of_words)  # pick random word from list
-    return word.upper()  # Return the word uppercase
+    word = random.choice(list_of_words)  # picks random word from list
+    return word.upper()  # returns the word uppercase
 
 
 # Code inspired by https://www.youtube.com/watch?v=m4nEnsavl6w&t=7s.
@@ -233,7 +233,7 @@ def main():
     '''
     word = get_word()
     hangman(word)
-    while input('Play again? (Y/N) ').upper() == 'Y':
+    while input('Play again? (Y/N) \n').upper() == 'Y':
         os.system('cls' if os.name == 'nt' else 'clear')
         word = get_word()
         hangman(word)
